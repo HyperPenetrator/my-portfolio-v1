@@ -63,6 +63,7 @@ const TechnicalBorder = ({ children, className = "" }: { children: React.ReactNo
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -73,21 +74,22 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-pure-black/90 backdrop-blur-md border-b border-dark-border py-4' : 'bg-transparent py-6'
-            }`}>
-            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                <div className="flex items-center gap-4">
-                    <motion.img
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        src="https://github.com/HyperPenetrator.png"
-                        alt="Logo"
-                        className="w-10 h-10 border border-dark-border grayscale hover:grayscale-0 transition-all cursor-pointer"
-                    />
-                    <span className="font-heading text-xs tracking-[0.2em] hidden sm:block">STATUS: ONLINE</span>
-                </div>
+        <>
+            <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-pure-black/90 backdrop-blur-md border-b border-dark-border py-4' : 'bg-transparent py-6'
+                }`}>
+                <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                    <div className="flex items-center gap-4">
+                        <motion.img
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            src="https://github.com/HyperPenetrator.png"
+                            alt="Logo"
+                            className="w-10 h-10 border border-dark-border grayscale hover:grayscale-0 transition-all cursor-pointer"
+                        />
+                        <span className="font-heading text-xs tracking-[0.2em] hidden sm:block">STATUS: ONLINE</span>
+                    </div>
 
-                <div className="flex items-center gap-10">
+                    {/* Desktop Menu */}
                     <div className="hidden md:flex gap-10 text-[10px] font-mono tracking-cli-heading uppercase">
                         {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
                             <a
@@ -100,9 +102,43 @@ const Navbar = () => {
                             </a>
                         ))}
                     </div>
+
+                    {/* Mobile Menu Toggle */}
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="md:hidden flex flex-col gap-1.5 p-2 border border-dark-border"
+                    >
+                        <div className={`h-[1px] w-6 bg-safety-orange transition-all ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+                        <div className={`h-[1px] w-6 bg-safety-orange transition-opacity ${isOpen ? 'opacity-0' : ''}`} />
+                        <div className={`h-[1px] w-6 bg-safety-orange transition-all ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+                    </button>
                 </div>
-            </div>
-        </nav>
+            </nav>
+
+            {/* Mobile Menu Overlay */}
+            <motion.div
+                initial={false}
+                animate={{ x: isOpen ? 0 : '100%' }}
+                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                className="fixed inset-0 z-[40] bg-pure-black flex flex-col items-center justify-center gap-8 md:hidden p-8"
+            >
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[length:100%_3px,3px_100%] pointer-events-none opacity-20" />
+                {['About', 'Skills', 'Projects', 'Contact'].map((item, idx) => (
+                    <motion.a
+                        key={item}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 20 }}
+                        transition={{ delay: idx * 0.1 }}
+                        href={`#${item.toLowerCase()}`}
+                        onClick={() => setIsOpen(false)}
+                        className="text-3xl font-heading tracking-widest text-white hover:text-safety-orange transition-colors"
+                    >
+                        <span className="text-safety-orange mr-4">0{idx + 1}</span>
+                        {item}
+                    </motion.a>
+                ))}
+            </motion.div>
+        </>
     );
 };
 
@@ -191,7 +227,7 @@ const BackgroundGallery = () => {
             {/* Background Image 1: Top Right Parallax */}
             <motion.div
                 style={{ y: y1 }}
-                className="absolute top-[10%] -right-[5%] w-[500px] h-[700px] opacity-[0.15] grayscale contrast-125 blur-[1px] transition-all"
+                className="absolute top-[10%] -right-[5%] w-[300px] h-[400px] sm:w-[500px] sm:h-[700px] opacity-[0.15] grayscale contrast-125 blur-[1px] transition-all"
             >
                 <img
                     src="/bg_ukulele.jpeg"
@@ -203,7 +239,7 @@ const BackgroundGallery = () => {
             {/* Background Image 2: Bottom Left Parallax */}
             <motion.div
                 style={{ y: y2 }}
-                className="absolute top-[50%] -left-[10%] w-[400px] h-[600px] opacity-[0.12] grayscale contrast-125 blur-[1px] rotate-12"
+                className="absolute top-[50%] -left-[10%] w-[250px] h-[350px] sm:w-[400px] sm:h-[600px] opacity-[0.12] grayscale contrast-125 blur-[1px] rotate-12"
             >
                 <img
                     src="/bg_selfie.jpeg"
@@ -286,33 +322,45 @@ export default function Portfolio() {
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
+                            className="text-center lg:text-left"
                         >
-                            <div className="flex items-center gap-4 mb-8">
+                            <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
                                 <span className="px-3 py-1 border border-safety-orange text-safety-orange text-[10px] font-mono tracking-widest uppercase">
                                     SEQ_01 // IDENTITY
                                 </span>
-                                <div className="h-[1px] w-20 bg-dark-border" />
+                                <div className="h-[1px] w-20 bg-dark-border hidden xs:block" />
                             </div>
 
-                            <h1 className="text-6xl md:text-8xl font-heading tracking-cli-heading uppercase mb-8 leading-[0.9]">
+                            <h1 className="text-5xl sm:text-6xl md:text-8xl font-heading tracking-cli-heading uppercase mb-8 leading-[0.9]">
                                 HRISHIKESH <br />
                                 <span className="text-safety-orange">DUTTA</span>
                             </h1>
 
-                            <div className="p-8 border-l-4 border-safety-orange bg-dark-border/10 mb-12">
-                                <p className="text-lg md:text-xl text-muted-gray font-mono tracking-cli-body leading-relaxed max-w-xl">
+                            {/* Mobile-only profile photo */}
+                            <div className="lg:hidden flex justify-center mb-12">
+                                <TechnicalBorder className="p-2 grayscale border-muted-gray">
+                                    <img
+                                        src="https://github.com/HyperPenetrator.png"
+                                        alt="Visual Identity"
+                                        className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] object-cover"
+                                    />
+                                </TechnicalBorder>
+                            </div>
+
+                            <div className="p-6 md:p-8 border-l-4 border-safety-orange bg-dark-border/10 mb-12">
+                                <p className="text-base md:text-xl text-muted-gray font-mono tracking-cli-body leading-relaxed max-w-xl mx-auto lg:mx-0">
                                     &gt; INITIALIZING BACKEND_CORE... <br />
                                     &gt; CRAFTING HIGH-PERFORMANCE SYSTEMS. <br />
                                     &gt; EXPLORING MACHINE LEARNING FRONTIERS.
                                 </p>
                             </div>
 
-                            <div className="flex gap-6">
+                            <div className="flex justify-center lg:justify-start gap-6">
                                 <motion.a
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     href="#projects"
-                                    className="px-10 py-5 bg-safety-orange text-pure-black font-heading tracking-widest uppercase text-sm hover:bg-white transition-colors"
+                                    className="w-full sm:w-auto px-10 py-5 bg-safety-orange text-pure-black font-heading tracking-widest uppercase text-sm hover:bg-white transition-colors"
                                 >
                                     ACCESS PROJECTS_
                                 </motion.a>
@@ -337,7 +385,7 @@ export default function Portfolio() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1 }}
-                        className="flex gap-8 mt-20 font-mono text-xs uppercase tracking-widest text-muted-gray"
+                        className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-8 mt-20 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-gray"
                     >
                         <a href="https://github.com/HyperPenetrator" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
                             [GITHUB]
@@ -423,17 +471,17 @@ export default function Portfolio() {
                             </p>
                         </div>
 
-                        <TechnicalBorder className="p-12 text-center bg-safety-orange/5">
+                        <TechnicalBorder className="p-6 sm:p-12 text-center bg-safety-orange/5">
                             <motion.a
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 href="mailto:hrishikeshdutta8976@gmail.com"
-                                className="inline-flex items-center gap-4 px-12 py-6 bg-pure-black border border-safety-orange text-safety-orange font-heading tracking-[0.2em] uppercase text-lg hover:bg-safety-orange hover:text-pure-black transition-all"
+                                className="w-full sm:inline-flex items-center justify-center gap-4 px-8 sm:px-12 py-6 bg-pure-black border border-safety-orange text-safety-orange font-heading tracking-[0.2em] uppercase text-sm sm:text-lg hover:bg-safety-orange hover:text-pure-black transition-all"
                             >
                                 SEND_MESSAGE <Mail className="w-5 h-5" />
                             </motion.a>
 
-                            <div className="mt-12 flex justify-center gap-12 font-mono text-[10px] uppercase tracking-widest">
+                            <div className="mt-12 flex flex-wrap justify-center gap-6 sm:gap-12 font-mono text-[10px] uppercase tracking-widest">
                                 <a href="https://www.linkedin.com/in/hrishikesh-dutta-714849359/" target="_blank" rel="noopener noreferrer" className="text-muted-gray hover:text-white transition-colors">
                                     [LINKEDIN_UPLINK]
                                 </a>
