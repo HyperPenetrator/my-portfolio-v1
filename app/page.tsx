@@ -16,6 +16,7 @@ import {
     Instagram,
     ChevronRight,
     Shield,
+    Trophy,
     LucideIcon
 } from 'lucide-react';
 
@@ -91,7 +92,7 @@ const Navbar = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex gap-10 text-[10px] font-mono tracking-cli-heading uppercase">
-                        {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
+                        {['About', 'Skills', 'Projects', 'Achievements', 'Contact'].map((item) => (
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
@@ -123,7 +124,7 @@ const Navbar = () => {
                 className="fixed inset-0 z-[40] bg-pure-black flex flex-col items-center justify-center gap-8 md:hidden p-8"
             >
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[length:100%_3px,3px_100%] pointer-events-none opacity-20" />
-                {['About', 'Skills', 'Projects', 'Contact'].map((item, idx) => (
+                {['About', 'Skills', 'Projects', 'Achievements', 'Contact'].map((item, idx) => (
                     <motion.a
                         key={item}
                         initial={{ opacity: 0, y: 20 }}
@@ -261,44 +262,48 @@ export default function Portfolio() {
     const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
     const skills = [
+        { name: "Python (Expert)", icon: Code2 },
+        { name: "JavaScript", icon: Globe },
         { name: "C", icon: Terminal },
-        { name: "Python", icon: Code2 },
-        { name: "Machine Learning", icon: Brain },
-        { name: "Node.js", icon: Cpu },
-        { name: "GCP", icon: Globe },
-        { name: "WebDev", icon: ExternalLink },
-        { name: "n8n", icon: Database },
-        { name: "Git", icon: Github },
+        { name: "C++", icon: Terminal },
+        { name: "Java", icon: Code2 },
+        { name: "SQL", icon: Database },
+        { name: "PowerShell", icon: Terminal },
+        { name: "AI/ML Integration", icon: Brain },
+        { name: "YOLOv8", icon: Brain },
+        { name: "PID Control", icon: Cpu },
+        { name: "Agent-First Dev", icon: Cpu },
+        { name: "Git & GitHub", icon: Github },
     ];
 
     const projects: Project[] = [
         {
-            title: "My_Safety",
-            description: "A comprehensive personal protection application designed with safety features and real-time tracking.",
-            icon: <Shield className="w-6 h-6" />,
-            demoLink: "https://my-safety-codecraft-v2.netlify.app/",
-            githubLink: "https://github.com/HyperPenetrator/My-Safety-App"
-        },
-        {
-            title: "StatMaxer RPG OS",
-            description: "A gamified habit tracker with RPG mechanics, hardcore alarms, and character progression to level up your life.",
-            icon: <Terminal className="w-6 h-6" />,
-            demoLink: "https://hyperpenetrator02.github.io/daily-tracker/",
-            githubLink: "https://github.com/HyperPenetrator02/daily-tracker"
-        },
-        {
-            title: "Temp.io",
-            description: "Industry-grade weather intelligence platform for India featuring real-time data and GPT-3.5 AI insights.",
+            title: "temp-io",
+            description: "An industry-grade weather intelligence platform for India featuring an integrated AI assistant. (Role: Sole Developer)",
             icon: <Globe className="w-6 h-6" />,
             demoLink: "https://temp-io-lemon.vercel.app/",
             githubLink: "https://github.com/HyperPenetrator/temp-io"
         },
         {
-            title: "B0LT AI Bot",
-            description: "A Python-based chatbot powered by Google's Gemini AI for intelligent natural language interactions.",
+            title: "LUIT - Clean Brahmaputra",
+            description: "A mobile-first web application designed for reporting and cleaning garbage in the Brahmaputra River. It utilizes YOLOv8 machine learning models for image capture and automated garbage verification. (Role: Team Lead - Team LuitLabs)",
             icon: <Brain className="w-6 h-6" />,
-            demoLink: "https://github.com/HyperPenetrator/B0LT",
-            githubLink: "https://github.com/HyperPenetrator/B0LT"
+            demoLink: "https://github.com/HyperPenetrator/LUIT",
+            githubLink: "https://github.com/HyperPenetrator/LUIT"
+        },
+        {
+            title: "My_Safety",
+            description: "A voice-activated emergency support web application developed to ensure student safety in and around the Gauhati University campus. (Role: Core Developer - Team CodeCraft)",
+            icon: <Shield className="w-6 h-6" />,
+            demoLink: "https://my-safety-codecraft-v2.netlify.app/",
+            githubLink: "https://github.com/HyperPenetrator/My_Safety"
+        },
+        {
+            title: "eYRC CropDrop Bot",
+            description: "A robotics project built for the e-Yantra Robotics Competition 2025-26, featuring custom C-based PID control algorithms for precise robotic navigation.",
+            icon: <Cpu className="w-6 h-6" />,
+            demoLink: "https://github.com/HyperPenetrator",
+            githubLink: "https://github.com/HyperPenetrator"
         }
     ];
 
@@ -331,10 +336,14 @@ export default function Portfolio() {
                                 <div className="h-[1px] w-20 bg-dark-border hidden xs:block" />
                             </div>
 
-                            <h1 className="text-5xl sm:text-6xl md:text-8xl font-heading tracking-cli-heading uppercase mb-8 leading-[0.9]">
+                            <h1 className="text-5xl sm:text-6xl md:text-8xl font-heading tracking-cli-heading uppercase mb-4 leading-[0.9]">
                                 HRISHIKESH <br />
                                 <span className="text-safety-orange">DUTTA</span>
                             </h1>
+
+                            <div className="text-xs sm:text-sm font-mono tracking-widest uppercase text-safety-orange mb-8 max-w-xl mx-auto lg:mx-0">
+                                Robotics & Artificial Intelligence Engineering Student | Software Developer
+                            </div>
 
                             {/* Mobile-only profile photo */}
                             <div className="lg:hidden flex justify-center mb-12">
@@ -348,10 +357,8 @@ export default function Portfolio() {
                             </div>
 
                             <div className="p-6 md:p-8 border-l-4 border-safety-orange bg-dark-border/10 mb-12">
-                                <p className="text-base md:text-xl text-muted-gray font-mono tracking-cli-body leading-relaxed max-w-xl mx-auto lg:mx-0">
-                                    &gt; INITIALIZING BACKEND_CORE... <br />
-                                    &gt; CRAFTING HIGH-PERFORMANCE SYSTEMS. <br />
-                                    &gt; EXPLORING MACHINE LEARNING FRONTIERS.
+                                <p className="text-xs sm:text-sm text-muted-gray font-mono tracking-cli-body leading-relaxed max-w-xl mx-auto lg:mx-0 text-left">
+                                    I am a first-year undergraduate engineering student at Gauhati University Institute of Science and Technology (GUIST), specializing in Robotics and AI. I build impactful technology, focusing on everything from public safety web apps to environmental conservation platforms. I actively lead development teams like Team LuitLabs and Team CodeCraft.
                                 </p>
                             </div>
 
@@ -450,10 +457,42 @@ export default function Portfolio() {
                     </div>
                 </section>
 
+                {/* --- Achievements Section --- */}
+                <section id="achievements" className="py-32 border-b border-dark-border">
+                    <SectionHeading
+                        seq="SEQ_04"
+                        subtitle="RECORDED_ACCOMPLISHMENTS: HONORS, AWARDS, AND COMPETITIVE MILESTONES."
+                    >
+                        SYSTEM_ACHIEVEMENTS
+                    </SectionHeading>
+
+                    <div className="grid md:grid-cols-1 gap-8">
+                        <TechnicalBorder className="p-8 bg-safety-orange/5">
+                            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div className="flex items-start gap-4">
+                                    <div className="p-3 border border-dark-border text-safety-orange">
+                                        <Trophy className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <div className="text-safety-orange font-mono text-[10px] uppercase tracking-widest mb-1">// HACKATHON AWARD</div>
+                                        <h3 className="text-xl font-heading tracking-widest uppercase mb-2">TechSprint 2025</h3>
+                                        <p className="text-muted-gray text-xs font-mono tracking-cli-body">
+                                            Secured the 2nd Runner-up position for innovative problem-solving and rapid application development.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="px-4 py-2 border border-safety-orange text-safety-orange font-mono text-[10px] uppercase tracking-widest whitespace-nowrap self-start sm:self-center">
+                                    2nd Runner-up
+                                </div>
+                            </div>
+                        </TechnicalBorder>
+                    </div>
+                </section>
+
                 {/* --- Contact Section --- */}
                 <section id="contact" className="py-32 mb-20">
                     <SectionHeading
-                        seq="SEQ_04"
+                        seq="SEQ_05"
                         subtitle="UPLINKSTATUS: OPEN_FOR_COLLABORATION_AND_BACKEND_DEVELOPMENT_QUERIES."
                     >
                         ESTABLISH_UPLINK
