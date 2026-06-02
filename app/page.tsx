@@ -19,6 +19,9 @@ import {
     Trophy,
     LucideIcon
 } from 'lucide-react';
+import { ScrollBasedVelocity } from '@/components/ui/scroll-based-velocity';
+import { TextHoverEffect } from '@/components/ui/text-hover-effect';
+
 
 // --- Types ---
 
@@ -394,20 +397,28 @@ export default function Portfolio() {
                         transition={{ delay: 1 }}
                         className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-8 mt-20 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-gray"
                     >
-                        <a href="https://github.com/HyperPenetrator" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
-                            [GITHUB]
-                        </a>
-                        <a href="https://www.linkedin.com/in/hrishikesh-dutta-714849359/" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
-                            [LINKEDIN]
-                        </a>
-                        <a href="https://www.instagram.com/___helion?igsh=NjVwdXUybXduczQ=" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
-                            [INSTAGRAM]
-                        </a>
-                        <a href="mailto:hrishikeshdutta8976@gmail.com" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
-                            [EMAIL]
-                        </a>
+                         <a href="https://github.com/HyperPenetrator" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
+                             <Github className="w-4 h-4" /> [GITHUB]
+                         </a>
+                         <a href="https://www.linkedin.com/in/hrishikesh-dutta-714849359/" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
+                             <Linkedin className="w-4 h-4" /> [LINKEDIN]
+                         </a>
+                         <a href="https://www.instagram.com/___helion?igsh=NjVwdXUybXduczQ=" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
+                             <Instagram className="w-4 h-4" /> [INSTAGRAM]
+                         </a>
+                         <a href="mailto:hrishikeshdutta8976@gmail.com" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
+                             <Mail className="w-4 h-4" /> [EMAIL]
+                         </a>
                     </motion.div>
                 </section>
+
+                <div className="py-8 my-12 border-y border-dark-border overflow-hidden bg-pure-black">
+                    <ScrollBasedVelocity
+                        text="ROBOTICS ✦ AI ✦ DEVELOPMENT ✦ CONTROL ✦"
+                        default_velocity={1.2}
+                        className="text-4xl md:text-6xl font-heading uppercase text-safety-orange/80 tracking-tighter"
+                    />
+                </div>
 
                 {/* --- Skills Section --- */}
                 <section id="skills" className="py-32 border-b border-dark-border">
