@@ -265,46 +265,74 @@ export default function Portfolio() {
     const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
     const skills = [
-        { name: "Python (Expert)", icon: Code2 },
-        { name: "JavaScript", icon: Globe },
+        { name: "Python", icon: Code2 },
         { name: "C", icon: Terminal },
-        { name: "C++", icon: Terminal },
-        { name: "Java", icon: Code2 },
-        { name: "SQL", icon: Database },
-        { name: "PowerShell", icon: Terminal },
-        { name: "AI/ML Integration", icon: Brain },
+        { name: "Dart", icon: Code2 },
         { name: "YOLOv8", icon: Brain },
+        { name: "Generative AI", icon: Brain },
+        { name: "RAG & LangChain", icon: Brain },
+        { name: "Reinforcement Learning", icon: Brain },
+        { name: "Google Gemini", icon: Brain },
+        { name: "Firebase", icon: Database },
+        { name: "Antigravity 2.0", icon: Cpu },
+        { name: "n8n Automation", icon: Terminal },
+        { name: "GitHub & Git", icon: Github },
+        { name: "Cloud Run", icon: Globe },
         { name: "PID Control", icon: Cpu },
-        { name: "Agent-First Dev", icon: Cpu },
-        { name: "Git & GitHub", icon: Github },
+        { name: "Embedded Systems", icon: Cpu },
+        { name: "Circuit Simulation", icon: Cpu },
+        { name: "Docker", icon: Shield },
+        { name: "CI/CD", icon: Shield },
+        { name: "Google Cloud", icon: Globe }
     ];
 
     const projects: Project[] = [
         {
-            title: "temp-io",
-            description: "An industry-grade weather intelligence platform for India featuring an integrated AI assistant. (Role: Sole Developer)",
-            icon: <Globe className="w-6 h-6" />,
-            demoLink: "https://temp-io-lemon.vercel.app/",
-            githubLink: "https://github.com/HyperPenetrator/temp-io"
+            title: "CareerAI",
+            description: "Built a personalized recommendation engine powered by the Google Gemini API to guide career-related decisions. Designed the application architecture around generative AI to deliver tailored, context-aware suggestions. (Personal Project)",
+            icon: <Brain className="w-6 h-6" />,
+            demoLink: "https://github.com/HyperPenetrator",
+            githubLink: "https://github.com/HyperPenetrator"
         },
         {
-            title: "LUIT - Clean Brahmaputra",
-            description: "A mobile-first web application designed for reporting and cleaning garbage in the Brahmaputra River. It utilizes YOLOv8 machine learning models for image capture and automated garbage verification. (Role: Team Lead - Team LuitLabs)",
-            icon: <Brain className="w-6 h-6" />,
+            title: "EAS-product",
+            description: "Developed an Excel Analytics Suite unifying an Excel upload dashboard and an Antigravity 2.0 data pipeline into a single platform. (Personal Project)",
+            icon: <Database className="w-6 h-6" />,
+            demoLink: "https://github.com/HyperPenetrator",
+            githubLink: "https://github.com/HyperPenetrator"
+        },
+        {
+            title: "LUIT",
+            description: "Developed a platform for reporting and cleaning garbage in the Brahmaputra River. Performed QA testing of YOLOv8 models for real-time garbage detection. Architected project structure and roadmap to facilitate scalable environmental monitoring. (GUenARK SIH 1.0)",
+            icon: <Globe className="w-6 h-6" />,
             demoLink: "https://github.com/HyperPenetrator/LUIT",
             githubLink: "https://github.com/HyperPenetrator/LUIT"
         },
         {
-            title: "My_Safety",
-            description: "A voice-activated emergency support web application developed to ensure student safety in and around the Gauhati University campus. (Role: Core Developer - Team CodeCraft)",
+            title: "My Safety",
+            description: "Built a voice-activated emergency support web application featuring GPS tracking and scream detection. Awarded 2nd Runner-up at the GDG on-campus TechSprint 2025 event. (GDGoC GU: TechSprint)",
             icon: <Shield className="w-6 h-6" />,
             demoLink: "https://my-safety-codecraft-v2.netlify.app/",
             githubLink: "https://github.com/HyperPenetrator/My_Safety"
         },
         {
+            title: "OmniGuard",
+            description: "Designed a robust emergency response prototype leveraging Google Gemini 1.5 Flash and Firebase backend. (Build With AI: Solution Challenge 2026)",
+            icon: <Shield className="w-6 h-6" />,
+            demoLink: "https://github.com/HyperPenetrator",
+            githubLink: "https://github.com/HyperPenetrator"
+        },
+        {
             title: "eYRC CropDrop Bot",
-            description: "A robotics project built for the e-Yantra Robotics Competition 2025-26, featuring custom C-based PID control algorithms for precise robotic navigation.",
+            description: "Collaborated as part of Team ID CB_2202. Implemented PID control loop logic for precision autonomous movement in the CropDrop Bot project. (e-Yantra Robotics Competition 2025-26)",
             icon: <Cpu className="w-6 h-6" />,
+            demoLink: "https://github.com/HyperPenetrator",
+            githubLink: "https://github.com/HyperPenetrator"
+        },
+        {
+            title: "Spot@NE",
+            description: "Engineered a cultural heritage and tourism hub for Northeast India using the MERN stack. Optimized responsive UI/UX and data integration to enhance user engagement with regional heritage. (HackDays 4.0)",
+            icon: <Globe className="w-6 h-6" />,
             demoLink: "https://github.com/HyperPenetrator",
             githubLink: "https://github.com/HyperPenetrator"
         }
@@ -359,10 +387,17 @@ export default function Portfolio() {
                                 </TechnicalBorder>
                             </div>
 
-                            <div className="p-6 md:p-8 border-l-4 border-safety-orange bg-dark-border/10 mb-12">
+                            <div className="p-6 md:p-8 border-l-4 border-safety-orange bg-dark-border/10 mb-6">
                                 <p className="text-xs sm:text-sm text-muted-gray font-mono tracking-cli-body leading-relaxed max-w-xl mx-auto lg:mx-0 text-left">
                                     I am a first-year undergraduate engineering student at Gauhati University Institute of Science and Technology (GUIST), specializing in Robotics and AI. I build impactful technology, focusing on everything from public safety web apps to environmental conservation platforms. I actively lead development teams like Team LuitLabs and Team CodeCraft.
                                 </p>
+                            </div>
+
+                            <div className="p-6 border border-dark-border bg-pure-black/50 mb-12 font-mono text-left max-w-xl mx-auto lg:mx-0">
+                                <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-2">// EDUCATION_UPLINK</div>
+                                <h3 className="text-sm font-heading tracking-wider uppercase text-white">Gauhati University Institute of Science and Technology</h3>
+                                <p className="text-[11px] text-muted-gray mt-1">Bachelor of Technology in Robotics and Artificial Intelligence (2025 — 2029)</p>
+                                <p className="text-[11px] text-safety-orange mt-1">&gt; 1st Semester: 7.55 SGPA</p>
                             </div>
 
                             <div className="flex justify-center lg:justify-start gap-6">
@@ -406,7 +441,7 @@ export default function Portfolio() {
                          <a href="https://www.instagram.com/___helion?igsh=NjVwdXUybXduczQ=" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
                              <Instagram className="w-4 h-4" /> [INSTAGRAM]
                          </a>
-                         <a href="mailto:hrishikeshdutta8976@gmail.com" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
+                         <a href="mailto:hrishikeshdutta2006@gmail.com" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
                              <Mail className="w-4 h-4" /> [EMAIL]
                          </a>
                     </motion.div>
@@ -477,23 +512,71 @@ export default function Portfolio() {
                         SYSTEM_ACHIEVEMENTS
                     </SectionHeading>
 
-                    <div className="grid md:grid-cols-1 gap-8">
-                        <TechnicalBorder className="p-8 bg-safety-orange/5">
-                            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                                <div className="flex items-start gap-4">
-                                    <div className="p-3 border border-dark-border text-safety-orange">
-                                        <Trophy className="w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <div className="text-safety-orange font-mono text-[10px] uppercase tracking-widest mb-1">// HACKATHON AWARD</div>
-                                        <h3 className="text-xl font-heading tracking-widest uppercase mb-2">TechSprint 2025</h3>
-                                        <p className="text-muted-gray text-xs font-mono tracking-cli-body">
-                                            Secured the 2nd Runner-up position for innovative problem-solving and rapid application development.
-                                        </p>
-                                    </div>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {/* Research Card */}
+                        <TechnicalBorder className="p-8 bg-safety-orange/5 flex flex-col justify-between h-full">
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 border border-dark-border text-safety-orange">
+                                    <Brain className="w-6 h-6" />
                                 </div>
-                                <div className="px-4 py-2 border border-safety-orange text-safety-orange font-mono text-[10px] uppercase tracking-widest whitespace-nowrap self-start sm:self-center">
-                                    2nd Runner-up
+                                <div>
+                                    <div className="text-safety-orange font-mono text-[10px] uppercase tracking-widest mb-1">// RESEARCH_PROGRAM</div>
+                                    <h3 className="text-xl font-heading tracking-widest uppercase mb-2">LUSIP 2026</h3>
+                                    <p className="text-muted-gray text-xs font-mono tracking-cli-body">
+                                        Selected for the LUSIP 2026 "Strategies for Sustainable Future" program.
+                                    </p>
+                                </div>
+                            </div>
+                        </TechnicalBorder>
+
+                        {/* Certifications Card */}
+                        <TechnicalBorder className="p-8 bg-safety-orange/5 flex flex-col justify-between h-full">
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 border border-dark-border text-safety-orange">
+                                    <Shield className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <div className="text-safety-orange font-mono text-[10px] uppercase tracking-widest mb-1">// CERTIFICATIONS</div>
+                                    <h3 className="text-xl font-heading tracking-widest uppercase mb-2">Credentials</h3>
+                                    <ul className="text-muted-gray text-xs font-mono tracking-cli-body list-disc pl-4 space-y-2 mt-2">
+                                        <li>Artificial Intelligence Certification (Bolt IoT)</li>
+                                        <li>Ethical Hacking Workshop (IIT Guwahati)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </TechnicalBorder>
+
+                        {/* Competitions Card */}
+                        <TechnicalBorder className="p-8 bg-safety-orange/5 flex flex-col justify-between h-full md:col-span-2">
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 border border-dark-border text-safety-orange">
+                                    <Trophy className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <div className="text-safety-orange font-mono text-[10px] uppercase tracking-widest mb-1">// HACKATHONS & COMPETITIONS</div>
+                                    <h3 className="text-xl font-heading tracking-widest uppercase mb-2">Competitive Milestones</h3>
+                                    <ul className="text-muted-gray text-xs font-mono tracking-cli-body list-disc pl-4 space-y-2 mt-2">
+                                        <li>2nd Runner-up at TechSprint 2025 (Team CodeCraft, GDG on Campus — Gauhati University)</li>
+                                        <li>2nd Runner-up at GDGocGU 2026 (Team CodeCraft, GDG on Campus — Gauhati University)</li>
+                                        <li>2nd Runner-up at WebChain Hackathon 2026 (Team CodeCraft, GDG on Campus — Gauhati University)</li>
+                                        <li>Participant in PromptWars 2026 and HackDays 4.0</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </TechnicalBorder>
+
+                        {/* Portfolio Card */}
+                        <TechnicalBorder className="p-8 bg-safety-orange/5 flex flex-col justify-between h-full md:col-span-2">
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 border border-dark-border text-safety-orange">
+                                    <Terminal className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <div className="text-safety-orange font-mono text-[10px] uppercase tracking-widest mb-1">// PROJECT_PORTFOLIO</div>
+                                    <h3 className="text-xl font-heading tracking-widest uppercase mb-2">GitHub Repositories</h3>
+                                    <p className="text-muted-gray text-xs font-mono tracking-cli-body">
+                                        Developed and maintained 13+ software projects actively hosted and version-controlled on GitHub.
+                                    </p>
                                 </div>
                             </div>
                         </TechnicalBorder>
@@ -525,7 +608,7 @@ export default function Portfolio() {
                             <motion.a
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                href="mailto:hrishikeshdutta8976@gmail.com"
+                                href="mailto:hrishikeshdutta2006@gmail.com"
                                 className="w-full sm:inline-flex items-center justify-center gap-4 px-8 sm:px-12 py-6 bg-pure-black border border-safety-orange text-safety-orange font-heading tracking-[0.2em] uppercase text-sm sm:text-lg hover:bg-safety-orange hover:text-pure-black transition-all"
                             >
                                 SEND_MESSAGE <Mail className="w-5 h-5" />
