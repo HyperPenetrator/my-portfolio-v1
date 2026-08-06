@@ -291,7 +291,7 @@ export default function Portfolio() {
             title: "CareerAI",
             description: "Built a personalized recommendation engine powered by the Google Gemini API to guide career-related decisions. Designed the application architecture around generative AI to deliver tailored, context-aware suggestions. (Personal Project)",
             icon: <Brain className="w-6 h-6" />,
-            demoLink: "https://github.com/HyperPenetrator",
+            demoLink: "https://dckwuhsairu3m.cloudfront.net/",
             githubLink: "https://github.com/HyperPenetrator"
         },
         {
@@ -305,8 +305,8 @@ export default function Portfolio() {
             title: "LUIT",
             description: "Developed a platform for reporting and cleaning garbage in the Brahmaputra River. Performed QA testing of YOLOv8 models for real-time garbage detection. Architected project structure and roadmap to facilitate scalable environmental monitoring. (GUenARK SIH 1.0)",
             icon: <Globe className="w-6 h-6" />,
-            demoLink: "https://github.com/HyperPenetrator/LUIT",
-            githubLink: "https://github.com/HyperPenetrator/LUIT"
+            demoLink: "https://luit.vercel.app",
+            githubLink: "https://github.com/HyperPenetrator/LUIT-CleanWater"
         },
         {
             title: "My Safety",
@@ -319,7 +319,7 @@ export default function Portfolio() {
             title: "OmniGuard",
             description: "Designed a robust emergency response prototype leveraging Google Gemini 1.5 Flash and Firebase backend. (Build With AI: Solution Challenge 2026)",
             icon: <Shield className="w-6 h-6" />,
-            demoLink: "https://github.com/HyperPenetrator",
+            demoLink: "https://omniguard-web.vercel.app/",
             githubLink: "https://github.com/HyperPenetrator"
         },
         {
