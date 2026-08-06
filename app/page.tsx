@@ -264,6 +264,19 @@ export default function Portfolio() {
     const { scrollYProgress } = useScroll();
     const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
+    const [repoCount, setRepoCount] = useState<number>(36);
+
+    useEffect(() => {
+        fetch("https://api.github.com/users/HyperPenetrator")
+            .then(res => res.json())
+            .then(data => {
+                if (data && typeof data.public_repos === "number") {
+                    setRepoCount(data.public_repos);
+                }
+            })
+            .catch(() => {});
+    }, []);
+
     const skills = [
         { name: "Python", icon: Code2 },
         { name: "C", icon: Terminal },
@@ -591,7 +604,6 @@ export default function Portfolio() {
                                     <h3 className="text-xl font-heading tracking-widest uppercase mb-2">Competitive Milestones</h3>
                                     <ul className="text-muted-gray text-xs font-mono tracking-cli-body list-disc pl-4 space-y-2 mt-2">
                                         <li>2nd Runner-up at TechSprint 2025 (Team CodeCraft, GDG on Campus — Gauhati University)</li>
-                                        <li>2nd Runner-up at GDGocGU 2026 (Team CodeCraft, GDG on Campus — Gauhati University)</li>
                                         <li>2nd Runner-up at WebChain Hackathon 2026 (Team CodeCraft, GDG on Campus — Gauhati University)</li>
                                         <li>Participant in PromptWars 2026 and HackDays 4.0</li>
                                     </ul>
@@ -609,7 +621,7 @@ export default function Portfolio() {
                                     <div className="text-safety-orange font-mono text-[10px] uppercase tracking-widest mb-1">// PROJECT_PORTFOLIO</div>
                                     <h3 className="text-xl font-heading tracking-widest uppercase mb-2">GitHub Repositories</h3>
                                     <p className="text-muted-gray text-xs font-mono tracking-cli-body">
-                                        Developed and maintained 13+ software projects actively hosted and version-controlled on GitHub.
+                                        Developed and maintained {repoCount}+ software projects actively hosted and version-controlled on GitHub.
                                     </p>
                                 </div>
                             </div>
