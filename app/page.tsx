@@ -389,7 +389,7 @@ export default function Portfolio() {
 
                             <div className="p-6 md:p-8 border-l-4 border-safety-orange bg-dark-border/10 mb-6">
                                 <p className="text-xs sm:text-sm text-muted-gray font-mono tracking-cli-body leading-relaxed max-w-xl mx-auto lg:mx-0 text-left">
-                                    I am a first-year undergraduate engineering student at Gauhati University Institute of Science and Technology (GUIST), specializing in Robotics and AI. I build impactful technology, focusing on everything from public safety web apps to environmental conservation platforms. I actively lead development teams like Team LuitLabs and Team CodeCraft.
+                                    I am a second-year undergraduate engineering student at Gauhati University Institute of Science and Technology (GUIST), specializing in Robotics and AI. I build impactful technology, focusing on everything from public safety web apps to environmental conservation platforms. I actively lead development teams like Team LuitLabs and Team CodeCraft.
                                 </p>
                             </div>
 
@@ -463,6 +463,40 @@ export default function Portfolio() {
                     >
                         CORE_EXPERTISE
                     </SectionHeading>
+
+                    <div className="grid md:grid-cols-2 gap-8 mb-16 font-mono text-xs text-muted-gray leading-relaxed">
+                        <TechnicalBorder className="p-6 bg-pure-black/50">
+                            <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-3">// AI / ML & COMPUTER VISION [PROFICIENCY: ADVANCED]</div>
+                            <p className="mb-4">
+                                Deep integration of YOLOv8 computer vision models for real-time edge intelligence, garbage detection, and classification. Large Language Model integration utilizing the Google Gemini API for personalized agents and generative workflows.
+                            </p>
+                            <div className="text-[10px] text-white tracking-wider">PRIMARY STACK: Python, PyTorch, YOLOv8, LangChain, Google Gemini API</div>
+                        </TechnicalBorder>
+
+                        <TechnicalBorder className="p-6 bg-pure-black/50">
+                            <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-3">// FULL-STACK DEVELOPMENT [PROFICIENCY: ADVANCED]</div>
+                            <p className="mb-4">
+                                Production-grade web architecture utilizing the MERN stack (MongoDB, Express, React, Node) and Next.js. Focus on mobile-first design, edge voice activation triggers, responsive UX, and Firebase backends.
+                            </p>
+                            <div className="text-[10px] text-white tracking-wider">PRIMARY STACK: JavaScript, React, Next.js, Node.js, Express, Firebase</div>
+                        </TechnicalBorder>
+
+                        <TechnicalBorder className="p-6 bg-pure-black/50">
+                            <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-3">// EMBEDDED SYSTEMS & ROBOTICS [PROFICIENCY: ADVANCED]</div>
+                            <p className="mb-4">
+                                Precision feedback control loop implementations using C/C++ for hardware agents. PID loop optimization for autonomous robot navigation, circuit simulations (PSpice), and embedded systems development.
+                            </p>
+                            <div className="text-[10px] text-white tracking-wider">PRIMARY STACK: C, C++, PID Control, PSpice, Embedded Systems</div>
+                        </TechnicalBorder>
+
+                        <TechnicalBorder className="p-6 bg-pure-black/50">
+                            <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-3">// DEVOPS & CLOUD INFRASTRUCTURE [PROFICIENCY: INTERMEDIATE]</div>
+                            <p className="mb-4">
+                                Scalable container deployment via Docker and automation scripts. Secure deployments using Google Cloud Run, continuous integration workflows (CI/CD), and automated workflows with n8n.
+                            </p>
+                            <div className="text-[10px] text-white tracking-wider">PRIMARY STACK: Docker, Git, CI/CD, Google Cloud Run, n8n</div>
+                        </TechnicalBorder>
+                    </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-dark-border">
                         {skills.map((skill, idx) => (
