@@ -432,18 +432,18 @@ export default function Portfolio() {
                         transition={{ delay: 1 }}
                         className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-8 mt-20 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-gray"
                     >
-                         <a href="https://github.com/HyperPenetrator" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
-                             <Github className="w-4 h-4" /> [GITHUB]
-                         </a>
-                         <a href="https://www.linkedin.com/in/hrishikesh-dutta-714849359/" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
-                             <Linkedin className="w-4 h-4" /> [LINKEDIN]
-                         </a>
-                         <a href="https://www.instagram.com/___helion?igsh=NjVwdXUybXduczQ=" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
-                             <Instagram className="w-4 h-4" /> [INSTAGRAM]
-                         </a>
-                         <a href="mailto:hrishikeshdutta2006@gmail.com" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
-                             <Mail className="w-4 h-4" /> [EMAIL]
-                         </a>
+                        <a href="https://github.com/HyperPenetrator" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
+                            <Github className="w-4 h-4" /> [GITHUB]
+                        </a>
+                        <a href="https://www.linkedin.com/in/hrishikesh-dutta-714849359/" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
+                            <Linkedin className="w-4 h-4" /> [LINKEDIN]
+                        </a>
+                        <a href="https://www.instagram.com/___helion?igsh=NjVwdXUybXduczQ=" target="_blank" rel="noopener noreferrer" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
+                            <Instagram className="w-4 h-4" /> [INSTAGRAM]
+                        </a>
+                        <a href="mailto:hrishikeshdutta8976@gmail.com" className="hover:text-safety-orange flex items-center gap-2 transition-colors">
+                            <Mail className="w-4 h-4" /> [EMAIL]
+                        </a>
                     </motion.div>
                 </section>
 
@@ -466,7 +466,7 @@ export default function Portfolio() {
 
                     <div className="grid md:grid-cols-2 gap-8 mb-16 font-mono text-xs text-muted-gray leading-relaxed">
                         <TechnicalBorder className="p-6 bg-pure-black/50">
-                            <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-3">// AI / ML & COMPUTER VISION [PROFICIENCY: ADVANCED]</div>
+                            <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-3">// AI / ML & COMPUTER VISION [PROFICIENCY: BEGINNER]</div>
                             <p className="mb-4">
                                 Deep integration of YOLOv8 computer vision models for real-time edge intelligence, garbage detection, and classification. Large Language Model integration utilizing the Google Gemini API for personalized agents and generative workflows.
                             </p>
@@ -474,7 +474,7 @@ export default function Portfolio() {
                         </TechnicalBorder>
 
                         <TechnicalBorder className="p-6 bg-pure-black/50">
-                            <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-3">// FULL-STACK DEVELOPMENT [PROFICIENCY: ADVANCED]</div>
+                            <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-3">// FULL-STACK DEVELOPMENT [PROFICIENCY: INTERMEDIATE]</div>
                             <p className="mb-4">
                                 Production-grade web architecture utilizing the MERN stack (MongoDB, Express, React, Node) and Next.js. Focus on mobile-first design, edge voice activation triggers, responsive UX, and Firebase backends.
                             </p>
@@ -482,7 +482,7 @@ export default function Portfolio() {
                         </TechnicalBorder>
 
                         <TechnicalBorder className="p-6 bg-pure-black/50">
-                            <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-3">// EMBEDDED SYSTEMS & ROBOTICS [PROFICIENCY: ADVANCED]</div>
+                            <div className="text-safety-orange text-[10px] uppercase tracking-widest mb-3">// EMBEDDED SYSTEMS & ROBOTICS [PROFICIENCY: BEGINNER]</div>
                             <p className="mb-4">
                                 Precision feedback control loop implementations using C/C++ for hardware agents. PID loop optimization for autonomous robot navigation, circuit simulations (PSpice), and embedded systems development.
                             </p>
